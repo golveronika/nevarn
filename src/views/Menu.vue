@@ -10,10 +10,15 @@
         Персонажи
       </button>
 
-      <button class="btn">
+      <button class="btn" @click="isModalOpen = true">
         Очистить прогресс
       </button>
     </nav>
+
+    <ConfirmResetModal
+      :show="isModalOpen"
+      @close="isModalOpen = false"
+    />
 
   </div>
 </template>
@@ -23,9 +28,15 @@
 import { onMounted } from 'vue'
 import { useBackgroundStore } from '@/stores/background'
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import ConfirmResetModal from '@/components/ConfirmResetModal.vue'
+
+const isModalOpen = ref(false)
+
 
 const bg = useBackgroundStore()
 const router = useRouter()
+
 
 onMounted(() => {
   console.log('menu mounted')

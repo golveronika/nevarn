@@ -1,7 +1,10 @@
 <template>
   <div class="ui-layer">
     <header class="ui-header">
-      <div>
+      <div class="back-container">
+        <button class="icon-btn" @click="() => router.push('/debug')">
+          <img src="/icons/debug.svg" width="30" height="30" />
+        </button>
         <button v-if="route.path !== '/'" class="icon-btn" @click="goToMenu">
           <img src="/icons/home.svg" width="30" height="30" />
           <span class="back">В главное меню</span>
@@ -37,6 +40,11 @@ function toggleSound() {
 </script>
 
 <style scoped>
+
+.back-container {
+  display: flex;
+  gap: 12px;
+}
 .ui-layer {
   position: fixed;
   inset: 0;
