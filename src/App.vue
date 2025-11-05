@@ -27,15 +27,42 @@ onMounted(async () => {
 </script>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: "Overpass", sans-serif;
 }
+
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background: #7a7a7a;
+  vertical-align: bottom;
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1
+  }
+
+  50.01%,
+  100% {
+    opacity: 0
+  }
+}
+
 
 .app-wrapper {
   position: relative;
